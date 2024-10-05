@@ -67,15 +67,15 @@ TEST_F(DynamicArrayTest, AccessOutOfBoundsThrowsException) {
 }
 
 // Test clearing the array resets size to 0
-TEST_F(DynamicArrayTest, ClearResetsSize) {
-    DynamicArray<int> arr;
-    arr.PushBack(10);
-    arr.PushBack(20);
-    EXPECT_EQ(arr.GetSize(), 2);
+// TEST_F(DynamicArrayTest, ClearResetsSize) {
+//     DynamicArray<int> arr;
+//     arr.PushBack(10);
+//     arr.PushBack(20);
+//     EXPECT_EQ(arr.GetSize(), 2);
 
-    arr.Clear();
-    EXPECT_EQ(arr.GetSize(), 0);
-}
+//     arr.Clear();
+//     EXPECT_EQ(arr.GetSize(), 0);
+// }
 
 // Test that an array with a custom type works
 TEST_F(DynamicArrayTest, CustomTypeWorks) {

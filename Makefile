@@ -19,10 +19,7 @@ $(EXEC): $(OBJS) dynamic_array.h
 # Rule to run the tests and generate coverage data
 
 test: $(EXEC)
-	./$(EXEC)   
-	git add .                             # Stage changes
-	git commit -m "Update coverage data" # Commit changes
-	git push origin main                          # Run the tests to generate coverage data
+	./$(EXEC)                            # Run the tests to generate coverage data
 	bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe
 
 # Clean up build artifacts and coverage data
