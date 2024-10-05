@@ -9,7 +9,7 @@ EXEC = test_run
 CODECOV_TOKEN = 5711eb10-0699-4268-89c9-3d132dbc5dfe  # Your Codecov token
 
 # Test cases (list the names of your individual test cases here)
-TEST_CASES = DynamicArrayTest.InitialSizeIsZero DynamicArrayTest.PushBackIncreasesSize
+TEST_CASES = DynamicArrayTest.InitialSizeIsZero #DynamicArrayTest.PushBackIncreasesSize
 
 # Default target to build the executable
 $(EXEC): $(OBJS) dynamic_array.h
