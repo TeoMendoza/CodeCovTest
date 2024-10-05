@@ -15,13 +15,13 @@ TEST_F(DynamicArrayTest, InitialSizeIsZero) {
 }
 
 // Test that adding an element increases the size
-// TEST_F(DynamicArrayTest, PushBackIncreasesSize) {
-//     DynamicArray<int> arr;
-//     arr.PushBack(10);
-//     EXPECT_EQ(arr.GetSize(), 1);
-//     arr.PushBack(20);
-//     EXPECT_EQ(arr.GetSize(), 2);
-// }
+TEST_F(DynamicArrayTest, PushBackIncreasesSize) {
+    DynamicArray<int> arr;
+    arr.PushBack(10);
+    EXPECT_EQ(arr.GetSize(), 1);
+    arr.PushBack(20);
+    EXPECT_EQ(arr.GetSize(), 2);
+}
 
 // Test that capacity doubles when array is full
 // TEST_F(DynamicArrayTest, CapacityDoublesWhenFull) {
