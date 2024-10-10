@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/locale
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:2
+        -:    0:Runs:3
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -1420,25 +1420,25 @@
         -: 1415:template <class _CharT, class _Traits>
         -: 1416:_LIBCPP_HIDDEN
         -: 1417:ostreambuf_iterator<_CharT, _Traits>
-function _ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_ called 918 returned 100% blocks executed 40%
-      918: 1418:__pad_and_output(ostreambuf_iterator<_CharT, _Traits> __s,
+function _ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_ called 1377 returned 100% blocks executed 40%
+     1377: 1418:__pad_and_output(ostreambuf_iterator<_CharT, _Traits> __s,
         -: 1419:                 const _CharT* __ob, const _CharT* __op, const _CharT* __oe,
         -: 1420:                 ios_base& __iob, _CharT __fl)
         -: 1421:{
-      918: 1422:    if (__s.__sbuf_ == nullptr)
+     1377: 1422:    if (__s.__sbuf_ == nullptr)
 branch  0 taken 100%
 branch  1 taken 0%
     #####: 1423:        return __s;
-      918: 1424:    streamsize __sz = __oe - __ob;
-      918: 1425:    streamsize __ns = __iob.width();
-      918: 1426:    if (__ns > __sz)
+     1377: 1424:    streamsize __sz = __oe - __ob;
+     1377: 1425:    streamsize __ns = __iob.width();
+     1377: 1426:    if (__ns > __sz)
 branch  0 taken 0%
 branch  1 taken 100%
     #####: 1427:        __ns -= __sz;
         -: 1428:    else
-      918: 1429:        __ns = 0;
-      918: 1430:    streamsize __np = __op - __ob;
-      918: 1431:    if (__np > 0)
+     1377: 1429:        __ns = 0;
+     1377: 1430:    streamsize __np = __op - __ob;
+     1377: 1431:    if (__np > 0)
 branch  0 taken 100%
 branch  1 taken 0%
         -: 1432:    {
@@ -1450,7 +1450,7 @@ branch  1 never executed
     #####: 1436:            return __s;
         -: 1437:        }
     #####: 1438:    }
-      918: 1439:    if (__ns > 0)
+     1377: 1439:    if (__ns > 0)
 branch  0 taken 100%
 branch  1 taken 0%
         -: 1440:    {
@@ -1468,22 +1468,22 @@ branch  3 never executed
 branch  0 never executed
 branch  1 never executed
 branch  2 never executed
-      918: 1448:    __np = __oe - __op;
-      918: 1449:    if (__np > 0)
+     1377: 1448:    __np = __oe - __op;
+     1377: 1449:    if (__np > 0)
 branch  0 taken 0%
 branch  1 taken 100%
         -: 1450:    {
-      918: 1451:        if (__s.__sbuf_->sputn(__op, __np) != __np)
+     1377: 1451:        if (__s.__sbuf_->sputn(__op, __np) != __np)
 branch  0 taken 0%
 branch  1 taken 100%
         -: 1452:        {
     #####: 1453:            __s.__sbuf_ = nullptr;
     #####: 1454:            return __s;
         -: 1455:        }
-      918: 1456:    }
-      918: 1457:    __iob.width(0);
-      918: 1458:    return __s;
-      918: 1459:}
+     1377: 1456:    }
+     1377: 1457:    __iob.width(0);
+     1377: 1458:    return __s;
+     1377: 1459:}
         -: 1460:
         -: 1461:template <class _CharT, class _OutputIterator>
         -: 1462:_OutputIterator

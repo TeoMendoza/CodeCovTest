@@ -1,7 +1,7 @@
         -:    0:Source:/opt/homebrew/Cellar/googletest/1.15.2/include/gtest/gtest-message.h
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:2
+        -:    0:Runs:3
         -:    0:Programs:1
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
