@@ -1,7 +1,7 @@
         -:    0:Source:/opt/homebrew/Cellar/googletest/1.15.2/include/gtest/gtest.h
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:5
+        -:    0:Runs:6
         -:    0:Programs:1
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
@@ -2359,8 +2359,8 @@ function _ZN7testing8internal8EqHelper7CompareIiiLPv0EEENS_15AssertionResultEPKc
         -: 2331:// namespace and has an all-caps name.
         -: 2332:int RUN_ALL_TESTS() GTEST_MUST_USE_RESULT_;
         -: 2333:
-function _Z13RUN_ALL_TESTSv called 5 returned 100% blocks executed 100%
-        5: 2334:inline int RUN_ALL_TESTS() { return ::testing::UnitTest::GetInstance()->Run(); }
+function _Z13RUN_ALL_TESTSv called 6 returned 100% blocks executed 100%
+        6: 2334:inline int RUN_ALL_TESTS() { return ::testing::UnitTest::GetInstance()->Run(); }
         -: 2335:
         -: 2336:GTEST_DISABLE_MSC_WARNINGS_POP_()  //  4251
         -: 2337:

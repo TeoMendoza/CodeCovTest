@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/allocator.h
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:5
+        -:    0:Runs:6
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -80,8 +80,8 @@
         -:   75:template <class _Unique>
         -:   76:struct __non_trivial_if<true, _Unique> {
         -:   77:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorIcEEEC2B6v15006Ev called 500 returned 100% blocks executed 100%
-      500:   78:    _LIBCPP_CONSTEXPR __non_trivial_if() _NOEXCEPT { }
+function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorIcEEEC2B6v15006Ev called 601 returned 100% blocks executed 100%
+      601:   78:    _LIBCPP_CONSTEXPR __non_trivial_if() _NOEXCEPT { }
         -:   79:};
         -:   80:
         -:   81:// allocator
@@ -102,8 +102,8 @@ function _ZNSt3__116__non_trivial_ifILb1ENS_9allocatorIcEEEC2B6v15006Ev called 5
         -:   96:    typedef true_type   is_always_equal;
         -:   97:
         -:   98:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNSt3__19allocatorIcEC2B6v15006Ev called 500 returned 100% blocks executed 100%
-      500:   99:    allocator() _NOEXCEPT = default;
+function _ZNSt3__19allocatorIcEC2B6v15006Ev called 601 returned 100% blocks executed 100%
+      601:   99:    allocator() _NOEXCEPT = default;
         -:  100:
         -:  101:    template <class _Up>
         -:  102:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17

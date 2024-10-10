@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:5
+        -:    0:Runs:6
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -168,9 +168,9 @@
         -:  163:{
         -:  164:public:
         -:  165:    _LIBCPP_INLINE_VISIBILITY explicit out_of_range(const string& __s) : logic_error(__s) {}
-function _ZNSt12out_of_rangeC1B6v15006EPKc called 0 returned 0% blocks executed 0%
-function _ZNSt12out_of_rangeC2B6v15006EPKc called 0 returned 0% blocks executed 0%
-    #####:  166:    _LIBCPP_INLINE_VISIBILITY explicit out_of_range(const char* __s)   : logic_error(__s) {}
+function _ZNSt12out_of_rangeC1B6v15006EPKc called 1 returned 100% blocks executed 100%
+function _ZNSt12out_of_rangeC2B6v15006EPKc called 1 returned 100% blocks executed 100%
+        2:  166:    _LIBCPP_INLINE_VISIBILITY explicit out_of_range(const char* __s)   : logic_error(__s) {}
         -:  167:
         -:  168:#ifndef _LIBCPP_ABI_VCRUNTIME
         -:  169:    out_of_range(const out_of_range&) _NOEXCEPT = default;

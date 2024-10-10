@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:5
+        -:    0:Runs:6
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -282,8 +282,8 @@
         -:  277:
         -:  278:protected:
         -:  279:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEEC2B6v15006Ev called 275 returned 100% blocks executed 100%
-      275:  280:    basic_ostream() {}  // extension, intentially does not initialize
+function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEEC2B6v15006Ev called 330 returned 100% blocks executed 100%
+      330:  280:    basic_ostream() {}  // extension, intentially does not initialize
         -:  281:};
         -:  282:
         -:  283:template <class _CharT, class _Traits>
@@ -299,8 +299,8 @@ function _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEEC2B6v15006Ev called 275 
         -:  293:    sentry& operator=(const sentry&) = delete;
         -:  294:
         -:  295:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentrycvbB6v15006Ev called 2295 returned 100% blocks executed 100%
-     2295:  296:    explicit operator bool() const {return __ok_;}
+function _ZNKSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentrycvbB6v15006Ev called 2754 returned 100% blocks executed 100%
+     2754:  296:    explicit operator bool() const {return __ok_;}
         -:  297:};
         -:  298:
         -:  299:template <class _CharT, class _Traits>
@@ -756,50 +756,50 @@ function _ZNKSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentrycvbB6v15006Ev ca
         -:  749:
         -:  750:template<class _CharT, class _Traits>
         -:  751:basic_ostream<_CharT, _Traits>&
-function _ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m called 2295 returned 100% blocks executed 52%
-     2295:  752:__put_character_sequence(basic_ostream<_CharT, _Traits>& __os,
+function _ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m called 2754 returned 100% blocks executed 52%
+     2754:  752:__put_character_sequence(basic_ostream<_CharT, _Traits>& __os,
         -:  753:                          const _CharT* __str, size_t __len)
         -:  754:{
         -:  755:#ifndef _LIBCPP_NO_EXCEPTIONS
         -:  756:    try
         -:  757:    {
         -:  758:#endif // _LIBCPP_NO_EXCEPTIONS
-     2295:  759:        typename basic_ostream<_CharT, _Traits>::sentry __s(__os);
+     2754:  759:        typename basic_ostream<_CharT, _Traits>::sentry __s(__os);
 branch  0 taken 100%
 branch  1 taken 0%
-     2295:  760:        if (__s)
+     2754:  760:        if (__s)
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
 branch  3 taken 0%
         -:  761:        {
         -:  762:            typedef ostreambuf_iterator<_CharT, _Traits> _Ip;
-     4590:  763:            if (__pad_and_output(_Ip(__os),
+     5508:  763:            if (__pad_and_output(_Ip(__os),
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 0%
 branch  3 taken 100%
 branch  4 taken 0%
 branch  5 taken 100%
-     2295:  764:                                 __str,
-     2295:  765:                                 (__os.flags() & ios_base::adjustfield) == ios_base::left ?
+     2754:  764:                                 __str,
+     2754:  765:                                 (__os.flags() & ios_base::adjustfield) == ios_base::left ?
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 0%
 branch  3 taken 100%
     #####:  766:                                     __str + __len :
-     2295:  767:                                     __str,
-     2295:  768:                                 __str + __len,
-     2295:  769:                                 __os,
-     4590:  770:                                 __os.fill()).failed())
+     2754:  767:                                     __str,
+     2754:  768:                                 __str + __len,
+     2754:  769:                                 __os,
+     5508:  770:                                 __os.fill()).failed())
 branch  0 taken 100%
 branch  1 taken 0%
     #####:  771:                __os.setstate(ios_base::badbit | ios_base::failbit);
 branch  0 never executed
 branch  1 never executed
-     2295:  772:        }
+     2754:  772:        }
         -:  773:#ifndef _LIBCPP_NO_EXCEPTIONS
-     2295:  774:    }
+     2754:  774:    }
         -:  775:    catch (...)
         -:  776:    {
     #####:  777:        __os.__set_badbit_and_consider_rethrow();
@@ -809,7 +809,7 @@ branch  1 never executed
 branch  0 never executed
 branch  1 never executed
         -:  779:#endif // _LIBCPP_NO_EXCEPTIONS
-     2295:  780:    return __os;
+     2754:  780:    return __os;
     #####:  781:}
         -:  782:
         -:  783:

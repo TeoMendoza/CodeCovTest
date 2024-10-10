@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/string
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:5
+        -:    0:Runs:6
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -843,13 +843,13 @@
         -:  838:
         -:  839:    template <class = __enable_if_t<__is_allocator<_Allocator>::value, nullptr_t> >
         -:  840:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006IDnEEPKc called 70 returned 100% blocks executed 100%
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006IDnEEPKc called 225 returned 100% blocks executed 100%
-      295:  841:    basic_string(const _CharT* __s) : __r_(__default_init_tag(), __default_init_tag()) {
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006IDnEEPKc called 84 returned 100% blocks executed 100%
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006IDnEEPKc called 270 returned 100% blocks executed 100%
+      354:  841:    basic_string(const _CharT* __s) : __r_(__default_init_tag(), __default_init_tag()) {
         -:  842:      _LIBCPP_ASSERT(__s != nullptr, "basic_string(const char*) detected nullptr");
-      225:  843:      __init(__s, traits_type::length(__s));
-      225:  844:      std::__debug_db_insert_c(this);
-      295:  845:    }
+      270:  843:      __init(__s, traits_type::length(__s));
+      270:  844:      std::__debug_db_insert_c(this);
+      354:  845:    }
         -:  846:
         -:  847:    template <class = __enable_if_t<__is_allocator<_Allocator>::value, nullptr_t> >
         -:  848:        _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
@@ -1509,11 +1509,11 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataB6v
         -: 1493:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 void __shrink_or_extend(size_type __target_capacity);
         -: 1494:
         -: 1495:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__is_longB6v15006Ev called 35 returned 100% blocks executed 100%
-       35: 1496:    bool __is_long() const _NOEXCEPT {
+function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__is_longB6v15006Ev called 42 returned 100% blocks executed 100%
+       42: 1496:    bool __is_long() const _NOEXCEPT {
         -: 1497:        if (__libcpp_is_constant_evaluated())
         -: 1498:            return true;
-       35: 1499:        return __r_.first().__s.__is_long_;
+       42: 1499:        return __r_.first().__s.__is_long_;
         -: 1500:    }
         -: 1501:
         -: 1502:    static _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 void __begin_lifetime(pointer __begin, size_type __n) {
@@ -1528,9 +1528,9 @@ function _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__is_l
         -: 1511:#endif // _LIBCPP_STD_VER > 17
         -: 1512:    }
         -: 1513:
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE14__default_initB6v15006Ev called 310 returned 100% blocks executed 100%
-      310: 1514:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 void __default_init() {
-      310: 1515:        __zero();
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE14__default_initB6v15006Ev called 373 returned 100% blocks executed 100%
+      373: 1514:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 void __default_init() {
+      373: 1515:        __zero();
         -: 1516:        if (__libcpp_is_constant_evaluated()) {
         -: 1517:            size_type __sz = __recommend(0) + 1;
         -: 1518:            pointer __ptr = __alloc_traits::allocate(__alloc(), __sz);
@@ -1539,7 +1539,7 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE14__defa
         -: 1521:            __set_long_cap(__sz);
         -: 1522:            __set_long_size(0);
         -: 1523:        }
-      310: 1524:    }
+      373: 1524:    }
         -: 1525:
         -: 1526:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17 void __deallocate_constexpr() {
         -: 1527:        if (__libcpp_is_constant_evaluated() && __get_pointer() != nullptr)
@@ -1650,10 +1650,10 @@ branch  0 never executed
 branch  1 never executed
         -: 1621:
         -: 1622:    _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__zeroB6v15006Ev called 310 returned 100% blocks executed 100%
-      310: 1623:    void __zero() _NOEXCEPT {
-      310: 1624:        __r_.first() = __rep();
-      310: 1625:    }
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__zeroB6v15006Ev called 373 returned 100% blocks executed 100%
+      373: 1623:    void __zero() _NOEXCEPT {
+      373: 1624:        __r_.first() = __rep();
+      373: 1625:    }
         -: 1626:
         -: 1627:    template <size_type __a> static
         -: 1628:        _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX17
@@ -1925,17 +1925,17 @@ function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__zeroB
         -: 1894:
         -: 1895:template <class _CharT, class _Traits, class _Allocator>
         -: 1896:inline _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006Ev called 275 returned 100% blocks executed 100%
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006Ev called 275 returned 100% blocks executed 66%
-      550: 1897:basic_string<_CharT, _Traits, _Allocator>::basic_string()
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006Ev called 331 returned 100% blocks executed 100%
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006Ev called 331 returned 100% blocks executed 66%
+      662: 1897:basic_string<_CharT, _Traits, _Allocator>::basic_string()
         -: 1898:    _NOEXCEPT_(is_nothrow_default_constructible<allocator_type>::value)
-      275: 1899:     : __r_(__default_init_tag(), __default_init_tag())
+      331: 1899:     : __r_(__default_init_tag(), __default_init_tag())
 branch  0 taken 100%
 branch  1 taken 0%
-      275: 1900:{
-      275: 1901:    std::__debug_db_insert_c(this);
-      275: 1902:    __default_init();
-      550: 1903:}
+      331: 1900:{
+      331: 1901:    std::__debug_db_insert_c(this);
+      331: 1902:    __default_init();
+      662: 1903:}
         -: 1904:
         -: 1905:template <class _CharT, class _Traits, class _Allocator>
         -: 1906:inline _LIBCPP_CONSTEXPR_AFTER_CXX17
@@ -2093,29 +2093,29 @@ branch  1 taken 0%
         -: 2058:
         -: 2059:template <class _CharT, class _Traits, class _Allocator>
         -: 2060:inline _LIBCPP_CONSTEXPR_AFTER_CXX17
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006EOS5_ called 35 returned 100% blocks executed 100%
-function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006EOS5_ called 35 returned 100% blocks executed 57%
-       70: 2061:basic_string<_CharT, _Traits, _Allocator>::basic_string(basic_string&& __str)
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006EOS5_ called 42 returned 100% blocks executed 100%
+function _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006EOS5_ called 42 returned 100% blocks executed 57%
+       84: 2061:basic_string<_CharT, _Traits, _Allocator>::basic_string(basic_string&& __str)
         -: 2062:#if _LIBCPP_STD_VER <= 14
         -: 2063:        _NOEXCEPT_(is_nothrow_move_constructible<allocator_type>::value)
         -: 2064:#else
         -: 2065:        _NOEXCEPT
         -: 2066:#endif
-       35: 2067:    : __r_(std::move(__str.__r_))
-       35: 2068:{
-       35: 2069:    __str.__default_init();
+       42: 2067:    : __r_(std::move(__str.__r_))
+       42: 2068:{
+       42: 2069:    __str.__default_init();
 branch  0 taken 100%
 branch  1 taken 0%
-       35: 2070:    std::__debug_db_insert_c(this);
+       42: 2070:    std::__debug_db_insert_c(this);
 branch  0 taken 100%
 branch  1 taken 0%
-       35: 2071:    if (__is_long())
+       42: 2071:    if (__is_long())
 branch  0 taken 0%
 branch  1 taken 100%
     #####: 2072:        std::__debug_db_swap(this, &__str);
 branch  0 never executed
 branch  1 never executed
-       70: 2073:}
+       84: 2073:}
         -: 2074:
         -: 2075:template <class _CharT, class _Traits, class _Allocator>
         -: 2076:inline _LIBCPP_CONSTEXPR_AFTER_CXX17

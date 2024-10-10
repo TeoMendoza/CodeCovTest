@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/ostreambuf_iterator.h
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:5
+        -:    0:Runs:6
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -53,10 +53,10 @@
         -:   48:private:
         -:   49:    streambuf_type* __sbuf_;
         -:   50:public:
-function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC1B6v15006ERNS_13basic_ostreamIcS2_EE called 2295 returned 100% blocks executed 100%
-function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC2B6v15006ERNS_13basic_ostreamIcS2_EE called 2295 returned 100% blocks executed 66%
-     4590:   51:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator(ostream_type& __s) _NOEXCEPT
-     4590:   52:        : __sbuf_(__s.rdbuf()) {}
+function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC1B6v15006ERNS_13basic_ostreamIcS2_EE called 2754 returned 100% blocks executed 100%
+function _ZNSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEEC2B6v15006ERNS_13basic_ostreamIcS2_EE called 2754 returned 100% blocks executed 66%
+     5508:   51:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator(ostream_type& __s) _NOEXCEPT
+     5508:   52:        : __sbuf_(__s.rdbuf()) {}
 branch  0 taken 100%
 branch  1 taken 0%
         -:   53:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator(streambuf_type* __s) _NOEXCEPT
@@ -70,8 +70,8 @@ branch  1 taken 0%
         -:   61:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator& operator*()     {return *this;}
         -:   62:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator& operator++()    {return *this;}
         -:   63:    _LIBCPP_INLINE_VISIBILITY ostreambuf_iterator& operator++(int) {return *this;}
-function _ZNKSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEE6failedB6v15006Ev called 2295 returned 100% blocks executed 100%
-     2295:   64:    _LIBCPP_INLINE_VISIBILITY bool failed() const _NOEXCEPT {return __sbuf_ == nullptr;}
+function _ZNKSt3__119ostreambuf_iteratorIcNS_11char_traitsIcEEE6failedB6v15006Ev called 2754 returned 100% blocks executed 100%
+     2754:   64:    _LIBCPP_INLINE_VISIBILITY bool failed() const _NOEXCEPT {return __sbuf_ == nullptr;}
         -:   65:
         -:   66:    template <class _Ch, class _Tr>
         -:   67:    friend

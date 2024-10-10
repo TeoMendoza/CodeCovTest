@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:5
+        -:    0:Runs:6
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -232,10 +232,10 @@
         -:  227:        : __hm_(nullptr), __mode_(ios_base::in | ios_base::out) {}
         -:  228:
         -:  229:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006Ej called 275 returned 100% blocks executed 100%
-function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006Ej called 275 returned 100% blocks executed 100%
-     1100:  230:    explicit basic_stringbuf(ios_base::openmode __wch)
-     1100:  231:        : __hm_(nullptr), __mode_(__wch) {}
+function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006Ej called 330 returned 100% blocks executed 100%
+function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v15006Ej called 330 returned 100% blocks executed 100%
+     1320:  230:    explicit basic_stringbuf(ios_base::openmode __wch)
+     1320:  231:        : __hm_(nullptr), __mode_(__wch) {}
         -:  232:
         -:  233:    _LIBCPP_INLINE_VISIBILITY
         -:  234:    explicit basic_stringbuf(const string_type& __s,
@@ -809,9 +809,9 @@ function _ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEC2B6v
         -:  802:public:
         -:  803:    // 30.8.5.1 [stringstream.cons], constructors
         -:  804:    _LIBCPP_INLINE_VISIBILITY
-function _ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006Ev called 275 returned 100% blocks executed 42%
-      550:  805:    basic_stringstream()
-      550:  806:        : basic_iostream<_CharT, _Traits>(&__sb_), __sb_(ios_base::in | ios_base::out) {}
+function _ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEC1B6v15006Ev called 330 returned 100% blocks executed 42%
+      660:  805:    basic_stringstream()
+      660:  806:        : basic_iostream<_CharT, _Traits>(&__sb_), __sb_(ios_base::in | ios_base::out) {}
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
