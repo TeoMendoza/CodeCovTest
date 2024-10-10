@@ -1,13 +1,11 @@
-coverage:
-  precision: 2
-  round: down
-  change: on
-  range: off
-  file:
-    ignore:
-      - 'test/*'
-      - 'tests/*'
-  yaml:
-    ignore:
-      - '**/test/*'
-      - '**/tests/*'
+# codecov.yml
+codecov:
+  # Prevents accumulation of coverage data
+  upload:
+    # Setting this to true will overwrite the existing coverage report
+    overwrite: true
+    # Use the following to set a unique environment variable for the uploads
+    #env: CODECOV_ENV
+
+
+
