@@ -1,7 +1,7 @@
         -:    0:Source:/opt/homebrew/Cellar/googletest/1.15.2/include/gtest/gtest.h
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:4
+        -:    0:Runs:5
         -:    0:Programs:1
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
@@ -1408,21 +1408,21 @@ branch  3 never executed
         -: 1388:
         -: 1389:// The helper function for {ASSERT|EXPECT}_EQ.
         -: 1390:template <typename T1, typename T2>
-function _ZN7testing8internal11CmpHelperEQImiEENS_15AssertionResultEPKcS4_RKT_RKT0_ called 6 returned 100% blocks executed 75%
+function _ZN7testing8internal11CmpHelperEQImiEENS_15AssertionResultEPKcS4_RKT_RKT0_ called 9 returned 100% blocks executed 75%
 function _ZN7testing8internal11CmpHelperEQIiiEENS_15AssertionResultEPKcS4_RKT_RKT0_ called 2 returned 100% blocks executed 75%
-        8: 1391:AssertionResult CmpHelperEQ(const char* lhs_expression,
+       11: 1391:AssertionResult CmpHelperEQ(const char* lhs_expression,
         -: 1392:                            const char* rhs_expression, const T1& lhs,
         -: 1393:                            const T2& rhs) {
-        8: 1394:  if (lhs == rhs) {
+       11: 1394:  if (lhs == rhs) {
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
 branch  3 taken 0%
-        8: 1395:    return AssertionSuccess();
+       11: 1395:    return AssertionSuccess();
         -: 1396:  }
         -: 1397:
     #####: 1398:  return CmpHelperEQFailure(lhs_expression, rhs_expression, lhs, rhs);
-        8: 1399:}
+       11: 1399:}
         -: 1400:
         -: 1401:class EqHelper {
         -: 1402: public:
@@ -1433,12 +1433,12 @@ branch  3 taken 0%
         -: 1407:      // and the other is the null pointer constant.
         -: 1408:      typename std::enable_if<!std::is_integral<T1>::value ||
         -: 1409:                              !std::is_pointer<T2>::value>::type* = nullptr>
-function _ZN7testing8internal8EqHelper7CompareImiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 6 returned 100% blocks executed 100%
+function _ZN7testing8internal8EqHelper7CompareImiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 9 returned 100% blocks executed 100%
 function _ZN7testing8internal8EqHelper7CompareIiiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 2 returned 100% blocks executed 100%
-        8: 1410:  static AssertionResult Compare(const char* lhs_expression,
+       11: 1410:  static AssertionResult Compare(const char* lhs_expression,
         -: 1411:                                 const char* rhs_expression, const T1& lhs,
         -: 1412:                                 const T2& rhs) {
-        8: 1413:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+       11: 1413:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
         -: 1414:  }
         -: 1415:
         -: 1416:  // With this overloaded version, we allow anonymous enums to be used
@@ -2359,8 +2359,8 @@ function _ZN7testing8internal8EqHelper7CompareIiiLPv0EEENS_15AssertionResultEPKc
         -: 2331:// namespace and has an all-caps name.
         -: 2332:int RUN_ALL_TESTS() GTEST_MUST_USE_RESULT_;
         -: 2333:
-function _Z13RUN_ALL_TESTSv called 4 returned 100% blocks executed 100%
-        4: 2334:inline int RUN_ALL_TESTS() { return ::testing::UnitTest::GetInstance()->Run(); }
+function _Z13RUN_ALL_TESTSv called 5 returned 100% blocks executed 100%
+        5: 2334:inline int RUN_ALL_TESTS() { return ::testing::UnitTest::GetInstance()->Run(); }
         -: 2335:
         -: 2336:GTEST_DISABLE_MSC_WARNINGS_POP_()  //  4251
         -: 2337:

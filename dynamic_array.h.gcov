@@ -1,7 +1,7 @@
         -:    0:Source:./dynamic_array.h
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:4
+        -:    0:Runs:5
         -:    0:Programs:1
         -:    1:#ifndef DYNAMIC_ARRAY_H
         -:    2:#define DYNAMIC_ARRAY_H
@@ -34,26 +34,26 @@ branch  1 taken 0%
         -:   24:
         -:   25:public:
         -:   26:    // Constructor
-function _ZN12DynamicArrayIiEC1Em called 4 returned 100% blocks executed 100%
-function _ZN12DynamicArrayIiEC2Em called 4 returned 100% blocks executed 100%
-        8:   27:    DynamicArray(size_t initialCapacity = 2)
-        8:   28:        : size_(0), capacity_(initialCapacity) {
-        4:   29:        data_ = new T[capacity_];
-        8:   30:    }
+function _ZN12DynamicArrayIiEC1Em called 5 returned 100% blocks executed 100%
+function _ZN12DynamicArrayIiEC2Em called 5 returned 100% blocks executed 100%
+       10:   27:    DynamicArray(size_t initialCapacity = 2)
+       10:   28:        : size_(0), capacity_(initialCapacity) {
+        5:   29:        data_ = new T[capacity_];
+       10:   30:    }
         -:   31:
         -:   32:    // Destructor
-function _ZN12DynamicArrayIiED1Ev called 4 returned 100% blocks executed 100%
-function _ZN12DynamicArrayIiED2Ev called 4 returned 100% blocks executed 100%
-        8:   33:    ~DynamicArray() {
-        4:   34:        delete[] data_;
+function _ZN12DynamicArrayIiED1Ev called 5 returned 100% blocks executed 100%
+function _ZN12DynamicArrayIiED2Ev called 5 returned 100% blocks executed 100%
+       10:   33:    ~DynamicArray() {
+        5:   34:        delete[] data_;
 branch  0 taken 100%
 branch  1 taken 0%
-        8:   35:    }
+       10:   35:    }
         -:   36:
         -:   37:    // Return the current size of the array
-function _ZNK12DynamicArrayIiE7GetSizeEv called 3 returned 100% blocks executed 100%
-        3:   38:    size_t GetSize() const {
-        3:   39:        return size_;
+function _ZNK12DynamicArrayIiE7GetSizeEv called 6 returned 100% blocks executed 100%
+        6:   38:    size_t GetSize() const {
+        6:   39:        return size_;
         -:   40:    }
         -:   41:
         -:   42:    // Return the current capacity of the array
@@ -63,25 +63,25 @@ function _ZNK12DynamicArrayIiE11GetCapacityEv called 3 returned 100% blocks exec
         -:   45:    }
         -:   46:
         -:   47:    // Add an element to the end of the array
-function _ZN12DynamicArrayIiE8PushBackERKi called 7 returned 100% blocks executed 100%
-        7:   48:    void PushBack(const T& element) {
-        7:   49:        if (size_ == capacity_) {
-branch  0 taken 86%
-branch  1 taken 14%
+function _ZN12DynamicArrayIiE8PushBackERKi called 9 returned 100% blocks executed 100%
+        9:   48:    void PushBack(const T& element) {
+        9:   49:        if (size_ == capacity_) {
+branch  0 taken 89%
+branch  1 taken 11%
         1:   50:            Resize(capacity_ * 2); // Double the capacity if the array is full
         1:   51:        }
-        7:   52:        data_[size_++] = element;
-        7:   53:    }
+        9:   52:        data_[size_++] = element;
+        9:   53:    }
         -:   54:
         -:   55:    // Remove the last element of the array
-function _ZN12DynamicArrayIiE7PopBackEv called 0 returned 0% blocks executed 0%
-    #####:   56:    void PopBack() {
-    #####:   57:        if (size_ > 0) {
-branch  0 never executed
-branch  1 never executed
-    #####:   58:            --size_;
-    #####:   59:        }
-    #####:   60:    }
+function _ZN12DynamicArrayIiE7PopBackEv called 2 returned 100% blocks executed 100%
+        2:   56:    void PopBack() {
+        2:   57:        if (size_ > 0) {
+branch  0 taken 0%
+branch  1 taken 100%
+        2:   58:            --size_;
+        2:   59:        }
+        2:   60:    }
         -:   61:
         -:   62:    // Access an element by index (read-only)
         -:   63:    const T& operator[](size_t index) const {

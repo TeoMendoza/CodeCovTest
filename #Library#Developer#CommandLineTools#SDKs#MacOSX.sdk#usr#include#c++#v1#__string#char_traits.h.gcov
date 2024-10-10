@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__string/char_traits.h
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:4
+        -:    0:Runs:5
         -:    0:Programs:1
         -:    1://===----------------------------------------------------------------------===//
         -:    2://
@@ -209,8 +209,8 @@
         -:  204:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
         -:  205:    int compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
         -:  206:
-function _ZNSt3__111char_traitsIcE6lengthEPKc called 180 returned 100% blocks executed 100%
-      180:  207:    static inline size_t _LIBCPP_CONSTEXPR_AFTER_CXX14 length(const char_type* __s)  _NOEXCEPT {
+function _ZNSt3__111char_traitsIcE6lengthEPKc called 225 returned 100% blocks executed 100%
+      225:  207:    static inline size_t _LIBCPP_CONSTEXPR_AFTER_CXX14 length(const char_type* __s)  _NOEXCEPT {
         -:  208:      // GCC currently does not support __builtin_strlen during constant evaluation.
         -:  209:      // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=70816
         -:  210:#ifdef _LIBCPP_COMPILER_GCC
@@ -221,7 +221,7 @@ function _ZNSt3__111char_traitsIcE6lengthEPKc called 180 returned 100% blocks ex
         -:  215:        return __i;
         -:  216:      }
         -:  217:#endif
-      180:  218:      return __builtin_strlen(__s);
+      225:  218:      return __builtin_strlen(__s);
         -:  219:    }
         -:  220:
         -:  221:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
@@ -253,12 +253,12 @@ function _ZNSt3__111char_traitsIcE6lengthEPKc called 180 returned 100% blocks ex
 function _ZNSt3__111char_traitsIcE11to_int_typeEc called 0 returned 0% blocks executed 0%
     #####:  247:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
     #####:  248:        {return int_type((unsigned char)__c);}
-function _ZNSt3__111char_traitsIcE11eq_int_typeEii called 1836 returned 100% blocks executed 100%
-     1836:  249:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
-     1836:  250:        {return __c1 == __c2;}
-function _ZNSt3__111char_traitsIcE3eofEv called 2056 returned 100% blocks executed 100%
-     2056:  251:    static inline _LIBCPP_CONSTEXPR int_type  eof() _NOEXCEPT
-     2056:  252:        {return int_type(EOF);}
+function _ZNSt3__111char_traitsIcE11eq_int_typeEii called 2295 returned 100% blocks executed 100%
+     2295:  249:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
+     2295:  250:        {return __c1 == __c2;}
+function _ZNSt3__111char_traitsIcE3eofEv called 2570 returned 100% blocks executed 100%
+     2570:  251:    static inline _LIBCPP_CONSTEXPR int_type  eof() _NOEXCEPT
+     2570:  252:        {return int_type(EOF);}
         -:  253:};
         -:  254:
         -:  255:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
