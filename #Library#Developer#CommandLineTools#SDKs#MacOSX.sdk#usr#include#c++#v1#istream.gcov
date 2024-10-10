@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:1
+        -:    0:Runs:2
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -195,9 +195,9 @@
         -:  190:
         -:  191:    // 27.7.1.1.1 Constructor/destructor:
         -:  192:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__113basic_istreamIcNS_11char_traitsIcEEEC2B6v15006EPNS_15basic_streambufIcS2_EE called 55 returned 100% blocks executed 100%
-      110:  193:    explicit basic_istream(basic_streambuf<char_type, traits_type>* __sb) : __gc_(0)
-      110:  194:    { this->init(__sb); }
+function _ZNSt3__113basic_istreamIcNS_11char_traitsIcEEEC2B6v15006EPNS_15basic_streambufIcS2_EE called 110 returned 100% blocks executed 100%
+      220:  193:    explicit basic_istream(basic_streambuf<char_type, traits_type>* __sb) : __gc_(0)
+      220:  194:    { this->init(__sb); }
         -:  195:    virtual ~basic_istream();
         -:  196:protected:
         -:  197:    inline _LIBCPP_INLINE_VISIBILITY
@@ -1410,14 +1410,14 @@ function _ZNSt3__113basic_istreamIcNS_11char_traitsIcEEEC2B6v15006EPNS_15basic_s
         -: 1404:
         -: 1405:    // constructor/destructor
         -: 1406:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-function _ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEEC2B6v15006EPNS_15basic_streambufIcS2_EE called 55 returned 100% blocks executed 50%
-      110: 1407:    explicit basic_iostream(basic_streambuf<char_type, traits_type>* __sb)
+function _ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEEC2B6v15006EPNS_15basic_streambufIcS2_EE called 110 returned 100% blocks executed 50%
+      220: 1407:    explicit basic_iostream(basic_streambuf<char_type, traits_type>* __sb)
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
 branch  3 taken 0%
-       55: 1408:      : basic_istream<_CharT, _Traits>(__sb)
-      110: 1409:    {}
+      110: 1408:      : basic_istream<_CharT, _Traits>(__sb)
+      220: 1409:    {}
         -: 1410:
         -: 1411:    virtual ~basic_iostream();
         -: 1412:protected:

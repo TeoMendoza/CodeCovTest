@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/unique_ptr.h
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:1
+        -:    0:Runs:2
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -269,9 +269,9 @@ branch  3 never executed
         -:  258:  _LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__110unique_ptrINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED1B6v15006Ev called 0 returned 0% blocks executed 0%
 function _ZNSt3__110unique_ptrINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED2B6v15006Ev called 0 returned 0% blocks executed 0%
-function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED1B6v15006Ev called 1 returned 100% blocks executed 100%
-function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED2B6v15006Ev called 1 returned 100% blocks executed 100%
-        2:  259:  ~unique_ptr() { reset(); }
+function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED1B6v15006Ev called 3 returned 100% blocks executed 100%
+function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEED2B6v15006Ev called 3 returned 100% blocks executed 100%
+        6:  259:  ~unique_ptr() { reset(); }
         -:  260:
         -:  261:  _LIBCPP_INLINE_VISIBILITY
         -:  262:  unique_ptr& operator=(nullptr_t) _NOEXCEPT {
@@ -316,17 +316,17 @@ function _ZNKSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9alloc
         -:  299:
         -:  300:  _LIBCPP_INLINE_VISIBILITY
 function _ZNSt3__110unique_ptrINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEE5resetB6v15006EPS6_ called 0 returned 0% blocks executed 0%
-function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEE5resetB6v15006EPS6_ called 1 returned 100% blocks executed 66%
-        1:  301:  void reset(pointer __p = pointer()) _NOEXCEPT {
-        1:  302:    pointer __tmp = __ptr_.first();
-        1:  303:    __ptr_.first() = __p;
-        1:  304:    if (__tmp)
+function _ZNSt3__110unique_ptrINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_14default_deleteIS6_EEE5resetB6v15006EPS6_ called 3 returned 100% blocks executed 66%
+        3:  301:  void reset(pointer __p = pointer()) _NOEXCEPT {
+        3:  302:    pointer __tmp = __ptr_.first();
+        3:  303:    __ptr_.first() = __p;
+        3:  304:    if (__tmp)
 branch  0 never executed
 branch  1 never executed
 branch  2 taken 0%
 branch  3 taken 100%
     #####:  305:      __ptr_.second()(__tmp);
-        1:  306:  }
+        3:  306:  }
         -:  307:
         -:  308:  _LIBCPP_INLINE_VISIBILITY
         -:  309:  void swap(unique_ptr& __u) _NOEXCEPT {

@@ -1,7 +1,7 @@
         -:    0:Source:/opt/homebrew/Cellar/googletest/1.15.2/include/gtest/internal/gtest-internal.h
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:1
+        -:    0:Runs:2
         -:    0:Programs:1
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
@@ -420,13 +420,13 @@
         -:  415:// returned for different types.  Calling the function twice with the
         -:  416:// same type argument is guaranteed to return the same ID.
         -:  417:template <typename T>
-function _ZN7testing8internal9GetTypeIdI16DynamicArrayTestEEPKvv called 7 returned 100% blocks executed 100%
-        7:  418:TypeId GetTypeId() {
+function _ZN7testing8internal9GetTypeIdI16DynamicArrayTestEEPKvv called 14 returned 100% blocks executed 100%
+       14:  418:TypeId GetTypeId() {
         -:  419:  // The compiler is required to allocate a different
         -:  420:  // TypeIdHelper<T>::dummy_ variable for each T used to instantiate
         -:  421:  // the template.  Therefore, the address of dummy_ is guaranteed to
         -:  422:  // be unique.
-        7:  423:  return &(TypeIdHelper<T>::dummy_);
+       14:  423:  return &(TypeIdHelper<T>::dummy_);
         -:  424:}
         -:  425:
         -:  426:// Returns the type ID of ::testing::Test.  Always call this instead
@@ -450,8 +450,8 @@ function _ZN7testing8internal15TestFactoryBaseD2Ev called 0 returned 0% blocks e
         -:  441:  virtual Test* CreateTest() = 0;
         -:  442:
         -:  443: protected:
-function _ZN7testing8internal15TestFactoryBaseC2Ev called 7 returned 100% blocks executed 100%
-        7:  444:  TestFactoryBase() {}
+function _ZN7testing8internal15TestFactoryBaseC2Ev called 14 returned 100% blocks executed 100%
+       14:  444:  TestFactoryBase() {}
         -:  445:
         -:  446: private:
         -:  447:  TestFactoryBase(const TestFactoryBase&) = delete;
@@ -461,55 +461,55 @@ function _ZN7testing8internal15TestFactoryBaseC2Ev called 7 returned 100% blocks
         -:  451:// This class provides implementation of TestFactoryBase interface.
         -:  452:// It is used in TEST and TEST_F macros.
         -:  453:template <class TestClass>
-function _ZN7testing8internal15TestFactoryImplI39DynamicArrayTest_InitialSizeIsZero_TestEC1Ev called 1 returned 100% blocks executed 100%
-function _ZN7testing8internal15TestFactoryImplI43DynamicArrayTest_PushBackIncreasesSize_TestEC1Ev called 1 returned 100% blocks executed 100%
-function _ZN7testing8internal15TestFactoryImplI45DynamicArrayTest_CapacityDoublesWhenFull_TestEC1Ev called 1 returned 100% blocks executed 100%
-function _ZN7testing8internal15TestFactoryImplI47DynamicArrayTest_ElementsAreCorrectlyAdded_TestEC1Ev called 1 returned 100% blocks executed 100%
-function _ZN7testing8internal15TestFactoryImplI42DynamicArrayTest_PopBackDecreasesSize_TestEC1Ev called 1 returned 100% blocks executed 100%
-function _ZN7testing8internal15TestFactoryImplI54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestEC1Ev called 1 returned 100% blocks executed 100%
-function _ZN7testing8internal15TestFactoryImplI37DynamicArrayTest_ClearResetsSize_TestEC1Ev called 1 returned 100% blocks executed 100%
-function _ZN7testing8internal15TestFactoryImplI39DynamicArrayTest_InitialSizeIsZero_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI39DynamicArrayTest_InitialSizeIsZero_TestEC1Ev called 2 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI43DynamicArrayTest_PushBackIncreasesSize_TestEC1Ev called 2 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI45DynamicArrayTest_CapacityDoublesWhenFull_TestEC1Ev called 2 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI47DynamicArrayTest_ElementsAreCorrectlyAdded_TestEC1Ev called 2 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI42DynamicArrayTest_PopBackDecreasesSize_TestEC1Ev called 2 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestEC1Ev called 2 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI37DynamicArrayTest_ClearResetsSize_TestEC1Ev called 2 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI39DynamicArrayTest_InitialSizeIsZero_TestEC2Ev called 2 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI39DynamicArrayTest_InitialSizeIsZero_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI39DynamicArrayTest_InitialSizeIsZero_TestED0Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI39DynamicArrayTest_InitialSizeIsZero_TestED2Ev called 0 returned 0% blocks executed 0%
-function _ZN7testing8internal15TestFactoryImplI43DynamicArrayTest_PushBackIncreasesSize_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI43DynamicArrayTest_PushBackIncreasesSize_TestEC2Ev called 2 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI43DynamicArrayTest_PushBackIncreasesSize_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI43DynamicArrayTest_PushBackIncreasesSize_TestED0Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI43DynamicArrayTest_PushBackIncreasesSize_TestED2Ev called 0 returned 0% blocks executed 0%
-function _ZN7testing8internal15TestFactoryImplI45DynamicArrayTest_CapacityDoublesWhenFull_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI45DynamicArrayTest_CapacityDoublesWhenFull_TestEC2Ev called 2 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI45DynamicArrayTest_CapacityDoublesWhenFull_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI45DynamicArrayTest_CapacityDoublesWhenFull_TestED0Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI45DynamicArrayTest_CapacityDoublesWhenFull_TestED2Ev called 0 returned 0% blocks executed 0%
-function _ZN7testing8internal15TestFactoryImplI47DynamicArrayTest_ElementsAreCorrectlyAdded_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI47DynamicArrayTest_ElementsAreCorrectlyAdded_TestEC2Ev called 2 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI47DynamicArrayTest_ElementsAreCorrectlyAdded_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI47DynamicArrayTest_ElementsAreCorrectlyAdded_TestED0Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI47DynamicArrayTest_ElementsAreCorrectlyAdded_TestED2Ev called 0 returned 0% blocks executed 0%
-function _ZN7testing8internal15TestFactoryImplI42DynamicArrayTest_PopBackDecreasesSize_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI42DynamicArrayTest_PopBackDecreasesSize_TestEC2Ev called 2 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI42DynamicArrayTest_PopBackDecreasesSize_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI42DynamicArrayTest_PopBackDecreasesSize_TestED0Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI42DynamicArrayTest_PopBackDecreasesSize_TestED2Ev called 0 returned 0% blocks executed 0%
-function _ZN7testing8internal15TestFactoryImplI54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestEC2Ev called 2 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestED0Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestED2Ev called 0 returned 0% blocks executed 0%
-function _ZN7testing8internal15TestFactoryImplI37DynamicArrayTest_ClearResetsSize_TestEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN7testing8internal15TestFactoryImplI37DynamicArrayTest_ClearResetsSize_TestEC2Ev called 2 returned 100% blocks executed 100%
 function _ZN7testing8internal15TestFactoryImplI37DynamicArrayTest_ClearResetsSize_TestED1Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI37DynamicArrayTest_ClearResetsSize_TestED0Ev called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI37DynamicArrayTest_ClearResetsSize_TestED2Ev called 0 returned 0% blocks executed 0%
         -:  454:class TestFactoryImpl : public TestFactoryBase {
         -:  455: public:
 function _ZN7testing8internal15TestFactoryImplI39DynamicArrayTest_InitialSizeIsZero_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
-function _ZN7testing8internal15TestFactoryImplI43DynamicArrayTest_PushBackIncreasesSize_TestE10CreateTestEv called 0 returned 0% blocks executed 0%
+function _ZN7testing8internal15TestFactoryImplI43DynamicArrayTest_PushBackIncreasesSize_TestE10CreateTestEv called 1 returned 100% blocks executed 50%
 function _ZN7testing8internal15TestFactoryImplI45DynamicArrayTest_CapacityDoublesWhenFull_TestE10CreateTestEv called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI47DynamicArrayTest_ElementsAreCorrectlyAdded_TestE10CreateTestEv called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI42DynamicArrayTest_PopBackDecreasesSize_TestE10CreateTestEv called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestE10CreateTestEv called 0 returned 0% blocks executed 0%
 function _ZN7testing8internal15TestFactoryImplI37DynamicArrayTest_ClearResetsSize_TestE10CreateTestEv called 0 returned 0% blocks executed 0%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
+        2:  456:  Test* CreateTest() override { return new TestClass; }
 branch  0 taken 100%
 branch  1 taken 0%
-branch  2 never executed
-branch  3 never executed
+branch  2 taken 100%
+branch  3 taken 0%
 branch  4 never executed
 branch  5 never executed
 branch  6 never executed
@@ -539,13 +539,13 @@ branch 13 never executed
         -:  473:using SetUpTestSuiteFunc = void (*)();
         -:  474:using TearDownTestSuiteFunc = void (*)();
         -:  475:
-function _ZN7testing8internal12CodeLocationD1Ev called 7 returned 100% blocks executed 100%
-function _ZN7testing8internal12CodeLocationD2Ev called 7 returned 100% blocks executed 100%
+function _ZN7testing8internal12CodeLocationD1Ev called 14 returned 100% blocks executed 100%
+function _ZN7testing8internal12CodeLocationD2Ev called 14 returned 100% blocks executed 100%
         -:  476:struct CodeLocation {
-function _ZN7testing8internal12CodeLocationC1ENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi called 7 returned 100% blocks executed 100%
-function _ZN7testing8internal12CodeLocationC2ENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi called 7 returned 100% blocks executed 100%
-       14:  477:  CodeLocation(std::string a_file, int a_line)
-       14:  478:      : file(std::move(a_file)), line(a_line) {}
+function _ZN7testing8internal12CodeLocationC1ENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi called 14 returned 100% blocks executed 100%
+function _ZN7testing8internal12CodeLocationC2ENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi called 14 returned 100% blocks executed 100%
+       28:  477:  CodeLocation(std::string a_file, int a_line)
+       28:  478:      : file(std::move(a_file)), line(a_line) {}
         -:  479:
         -:  480:  std::string file;
         -:  481:  int line;
@@ -557,10 +557,10 @@ function _ZN7testing8internal12CodeLocationC2ENSt3__112basic_stringIcNS2_11char_
         -:  487:// Utility functions to help SuiteApiResolver
         -:  488:using SetUpTearDownSuiteFuncType = void (*)();
         -:  489:
-function _ZN7testing8internal19GetNotDefaultOrNullEPFvvES2_ called 28 returned 100% blocks executed 75%
-       28:  490:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
+function _ZN7testing8internal19GetNotDefaultOrNullEPFvvES2_ called 56 returned 100% blocks executed 75%
+       56:  490:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
         -:  491:    SetUpTearDownSuiteFuncType a, SetUpTearDownSuiteFuncType def) {
-       28:  492:  return a == def ? nullptr : a;
+       56:  492:  return a == def ? nullptr : a;
 branch  0 taken 100%
 branch  1 taken 0%
         -:  493:}
@@ -575,16 +575,16 @@ branch  1 taken 0%
         -:  502:  using Test =
         -:  503:      typename std::conditional<sizeof(T) != 0, ::testing::Test, void>::type;
         -:  504:
-function _ZN7testing8internal16SuiteApiResolverI16DynamicArrayTestE19GetSetUpCaseOrSuiteEPKci called 7 returned 100% blocks executed 35%
-        7:  505:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
+function _ZN7testing8internal16SuiteApiResolverI16DynamicArrayTestE19GetSetUpCaseOrSuiteEPKci called 14 returned 100% blocks executed 35%
+       14:  505:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
         -:  506:                                                        int line_num) {
         -:  507:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-        7:  508:    SetUpTearDownSuiteFuncType test_case_fp =
-        7:  509:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
-        7:  510:    SetUpTearDownSuiteFuncType test_suite_fp =
-        7:  511:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
+       14:  508:    SetUpTearDownSuiteFuncType test_case_fp =
+       14:  509:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
+       14:  510:    SetUpTearDownSuiteFuncType test_suite_fp =
+       14:  511:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
         -:  512:
-        7:  513:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+       14:  513:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
@@ -605,7 +605,7 @@ branch  3 never executed
 branch  4 never executed
 branch  5 never executed
         -:  517:
-        7:  518:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+       14:  518:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
 branch  0 taken 0%
 branch  1 taken 100%
         -:  519:#else
@@ -615,16 +615,16 @@ branch  1 taken 100%
         -:  523:#endif
     #####:  524:  }
         -:  525:
-function _ZN7testing8internal16SuiteApiResolverI16DynamicArrayTestE22GetTearDownCaseOrSuiteEPKci called 7 returned 100% blocks executed 37%
-        7:  526:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
+function _ZN7testing8internal16SuiteApiResolverI16DynamicArrayTestE22GetTearDownCaseOrSuiteEPKci called 14 returned 100% blocks executed 37%
+       14:  526:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
         -:  527:                                                           int line_num) {
         -:  528:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-        7:  529:    SetUpTearDownSuiteFuncType test_case_fp =
-        7:  530:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
-        7:  531:    SetUpTearDownSuiteFuncType test_suite_fp =
-        7:  532:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
+       14:  529:    SetUpTearDownSuiteFuncType test_case_fp =
+       14:  530:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
+       14:  531:    SetUpTearDownSuiteFuncType test_suite_fp =
+       14:  532:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
         -:  533:
-        7:  534:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+       14:  534:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
 branch  0 taken 0%
 branch  1 taken 100%
 branch  2 taken 100%
@@ -643,7 +643,7 @@ branch  3 never executed
 branch  4 never executed
 branch  5 never executed
         -:  538:
-        7:  539:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+       14:  539:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
 branch  0 taken 0%
 branch  1 taken 100%
         -:  540:#else
