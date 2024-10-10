@@ -5,7 +5,7 @@ codecov:
     # Setting this to true will overwrite the existing coverage report
     overwrite: true
     # Use the following to set a unique environment variable for the uploads
-    #env: CODECOV_ENV
+    env: CODECOV_ENV
 
 
 
