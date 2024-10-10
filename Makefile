@@ -37,7 +37,7 @@ test: $(EXEC)
 		sleep 10; \
 		make $(EXEC); \
 		./$(EXEC) --gtest_filter=$$test; \
-		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe; \
+		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -Y codecov.yml; \
 	done
 
 # Clean up build artifacts and coverage data

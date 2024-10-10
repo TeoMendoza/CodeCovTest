@@ -1,0 +1,13 @@
+coverage:
+  precision: 2
+  round: down
+  change: on
+  range: off
+  file:
+    ignore:
+      - 'test/*'
+      - 'tests/*'
+  yaml:
+    ignore:
+      - '**/test/*'
+      - '**/tests/*'
