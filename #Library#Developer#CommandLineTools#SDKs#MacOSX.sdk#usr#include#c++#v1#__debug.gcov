@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__debug
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:3
+        -:    0:Runs:4
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -217,15 +217,15 @@
         -:  212:_LIBCPP_BEGIN_NAMESPACE_STD
         -:  213:
         -:  214:template <class _Tp>
-function _ZNSt3__119__debug_db_insert_cB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 321 returned 100% blocks executed 100%
-      321:  215:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_insert_c(_Tp* __c) {
+function _ZNSt3__119__debug_db_insert_cB6v15006INS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEEvPT_ called 428 returned 100% blocks executed 100%
+      428:  215:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_insert_c(_Tp* __c) {
         -:  216:#ifdef _LIBCPP_ENABLE_DEBUG_MODE
         -:  217:    if (!__libcpp_is_constant_evaluated())
         -:  218:        __get_db()->__insert_c(__c);
         -:  219:#else
         -:  220:    (void)(__c);
         -:  221:#endif
-      321:  222:}
+      428:  222:}
         -:  223:
         -:  224:template <class _Tp>
         -:  225:_LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR_AFTER_CXX11 inline void __debug_db_insert_i(_Tp* __i) {

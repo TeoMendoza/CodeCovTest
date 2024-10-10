@@ -1,7 +1,7 @@
         -:    0:Source:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:3
+        -:    0:Runs:4
         -:    0:Programs:1
         -:    1:// -*- C++ -*-
         -:    2://===----------------------------------------------------------------------===//
@@ -252,10 +252,10 @@
         -:  247:template <class _Facet>
         -:  248:inline _LIBCPP_INLINE_VISIBILITY
         -:  249:const _Facet&
-function _ZNSt3__19use_facetB6v15006INS_5ctypeIcEEEERKT_RKNS_6localeE called 135 returned 100% blocks executed 100%
-      135:  250:use_facet(const locale& __l)
+function _ZNSt3__19use_facetB6v15006INS_5ctypeIcEEEERKT_RKNS_6localeE called 180 returned 100% blocks executed 100%
+      180:  250:use_facet(const locale& __l)
         -:  251:{
-      135:  252:    return static_cast<const _Facet&>(*__l.use_facet(_Facet::id));
+      180:  252:    return static_cast<const _Facet&>(*__l.use_facet(_Facet::id));
         -:  253:}
         -:  254:
         -:  255:// template <class _CharT> class collate;
@@ -733,10 +733,10 @@ function _ZNSt3__19use_facetB6v15006INS_5ctypeIcEEEERKT_RKNS_6localeE called 135
         -:  727:    }
         -:  728:
         -:  729:    _LIBCPP_INLINE_VISIBILITY
-function _ZNKSt3__15ctypeIcE5widenB6v15006Ec called 135 returned 100% blocks executed 100%
-      135:  730:    char_type widen(char __c) const
+function _ZNKSt3__15ctypeIcE5widenB6v15006Ec called 180 returned 100% blocks executed 100%
+      180:  730:    char_type widen(char __c) const
         -:  731:    {
-      135:  732:        return do_widen(__c);
+      180:  732:        return do_widen(__c);
         -:  733:    }
         -:  734:
         -:  735:    _LIBCPP_INLINE_VISIBILITY

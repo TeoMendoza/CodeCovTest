@@ -1,21 +1,21 @@
         -:    0:Source:dynamic_array_test.cpp
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:3
+        -:    0:Runs:4
         -:    0:Programs:1
         -:    1:#include <gtest/gtest.h>
         -:    2:#include "dynamic_array.h"
         -:    3:
-function _ZN16DynamicArrayTestC2Ev called 3 returned 100% blocks executed 100%
+function _ZN16DynamicArrayTestC2Ev called 4 returned 100% blocks executed 100%
 function _ZN16DynamicArrayTestD1Ev called 0 returned 0% blocks executed 0%
 function _ZN16DynamicArrayTestD0Ev called 0 returned 0% blocks executed 0%
-function _ZN16DynamicArrayTestD2Ev called 3 returned 100% blocks executed 100%
+function _ZN16DynamicArrayTestD2Ev called 4 returned 100% blocks executed 100%
         -:    4:class DynamicArrayTest : public ::testing::Test {
         -:    5:protected:
-function _ZN16DynamicArrayTest5SetUpEv called 3 returned 100% blocks executed 100%
-        3:    6:    void SetUp() override {}
-function _ZN16DynamicArrayTest8TearDownEv called 3 returned 100% blocks executed 100%
-        3:    7:    void TearDown() override {}
+function _ZN16DynamicArrayTest5SetUpEv called 4 returned 100% blocks executed 100%
+        4:    6:    void SetUp() override {}
+function _ZN16DynamicArrayTest8TearDownEv called 4 returned 100% blocks executed 100%
+        4:    7:    void TearDown() override {}
         -:    8:};
         -:    9:
 function _ZN39DynamicArrayTest_InitialSizeIsZero_Test8TestBodyEv called 1 returned 100% blocks executed 31%
@@ -24,7 +24,7 @@ function _ZN39DynamicArrayTest_InitialSizeIsZero_TestD0Ev called 1 returned 100%
 function _ZN39DynamicArrayTest_InitialSizeIsZero_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN39DynamicArrayTest_InitialSizeIsZero_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN39DynamicArrayTest_InitialSizeIsZero_TestD2Ev called 1 returned 100% blocks executed 100%
-        9:   10:TEST_F(DynamicArrayTest, InitialSizeIsZero) {
+       10:   10:TEST_F(DynamicArrayTest, InitialSizeIsZero) {
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
@@ -67,7 +67,7 @@ function _ZN43DynamicArrayTest_PushBackIncreasesSize_TestD0Ev called 1 returned 
 function _ZN43DynamicArrayTest_PushBackIncreasesSize_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN43DynamicArrayTest_PushBackIncreasesSize_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN43DynamicArrayTest_PushBackIncreasesSize_TestD2Ev called 1 returned 100% blocks executed 100%
-        9:   15:    TEST_F(DynamicArrayTest, PushBackIncreasesSize) {
+       10:   15:    TEST_F(DynamicArrayTest, PushBackIncreasesSize) {
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
@@ -133,7 +133,7 @@ function _ZN45DynamicArrayTest_CapacityDoublesWhenFull_TestD0Ev called 1 returne
 function _ZN45DynamicArrayTest_CapacityDoublesWhenFull_TestC1Ev called 1 returned 100% blocks executed 100%
 function _ZN45DynamicArrayTest_CapacityDoublesWhenFull_TestC2Ev called 1 returned 100% blocks executed 100%
 function _ZN45DynamicArrayTest_CapacityDoublesWhenFull_TestD2Ev called 1 returned 100% blocks executed 100%
-        9:   23:    TEST_F(DynamicArrayTest, CapacityDoublesWhenFull) {
+       10:   23:    TEST_F(DynamicArrayTest, CapacityDoublesWhenFull) {
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
@@ -215,13 +215,13 @@ branch 14 never executed
 branch 15 never executed
         1:   33:    }
         -:   34:
-function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_Test8TestBodyEv called 0 returned 0% blocks executed 0%
-function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_TestD1Ev called 0 returned 0% blocks executed 0%
-function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_TestD0Ev called 0 returned 0% blocks executed 0%
-function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_TestC1Ev called 0 returned 0% blocks executed 0%
-function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_TestC2Ev called 0 returned 0% blocks executed 0%
-function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_TestD2Ev called 0 returned 0% blocks executed 0%
-        3:   35:    TEST_F(DynamicArrayTest, ElementsAreCorrectlyAdded) {
+function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_Test8TestBodyEv called 1 returned 100% blocks executed 36%
+function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_TestD1Ev called 1 returned 100% blocks executed 100%
+function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_TestC1Ev called 1 returned 100% blocks executed 100%
+function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_TestC2Ev called 1 returned 100% blocks executed 100%
+function _ZN47DynamicArrayTest_ElementsAreCorrectlyAdded_TestD2Ev called 1 returned 100% blocks executed 100%
+       10:   35:    TEST_F(DynamicArrayTest, ElementsAreCorrectlyAdded) {
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
@@ -238,22 +238,22 @@ branch 12 taken 100%
 branch 13 taken 0%
 branch 14 taken 100%
 branch 15 taken 0%
-    #####:   36:    DynamicArray<int> arr;
-    #####:   37:    arr.PushBack(10);
-branch  0 never executed
-branch  1 never executed
-    #####:   38:    arr.PushBack(20);
-branch  0 never executed
-branch  1 never executed
-    #####:   39:    EXPECT_EQ(arr[0], 10);
-branch  0 never executed
-branch  1 never executed
-branch  2 never executed
-branch  3 never executed
-branch  4 never executed
-branch  5 never executed
-branch  6 never executed
-branch  7 never executed
+        1:   36:    DynamicArray<int> arr;
+        1:   37:    arr.PushBack(10);
+branch  0 taken 100%
+branch  1 taken 0%
+        1:   38:    arr.PushBack(20);
+branch  0 taken 100%
+branch  1 taken 0%
+        1:   39:    EXPECT_EQ(arr[0], 10);
+branch  0 taken 100%
+branch  1 taken 0%
+branch  2 taken 100%
+branch  3 taken 0%
+branch  4 taken 100%
+branch  5 taken 0%
+branch  6 taken 0%
+branch  7 taken 100%
 branch  8 never executed
 branch  9 never executed
 branch 10 never executed
@@ -262,15 +262,15 @@ branch 12 never executed
 branch 13 never executed
 branch 14 never executed
 branch 15 never executed
-    #####:   40:    EXPECT_EQ(arr[1], 20);
-branch  0 never executed
-branch  1 never executed
-branch  2 never executed
-branch  3 never executed
-branch  4 never executed
-branch  5 never executed
-branch  6 never executed
-branch  7 never executed
+        1:   40:    EXPECT_EQ(arr[1], 20);
+branch  0 taken 100%
+branch  1 taken 0%
+branch  2 taken 100%
+branch  3 taken 0%
+branch  4 taken 100%
+branch  5 taken 0%
+branch  6 taken 0%
+branch  7 taken 100%
 branch  8 never executed
 branch  9 never executed
 branch 10 never executed
@@ -279,7 +279,7 @@ branch 12 never executed
 branch 13 never executed
 branch 14 never executed
 branch 15 never executed
-    #####:   41:    }
+        1:   41:    }
         -:   42:
 function _ZN42DynamicArrayTest_PopBackDecreasesSize_Test8TestBodyEv called 0 returned 0% blocks executed 0%
 function _ZN42DynamicArrayTest_PopBackDecreasesSize_TestD1Ev called 0 returned 0% blocks executed 0%
@@ -287,7 +287,7 @@ function _ZN42DynamicArrayTest_PopBackDecreasesSize_TestD0Ev called 0 returned 0
 function _ZN42DynamicArrayTest_PopBackDecreasesSize_TestC1Ev called 0 returned 0% blocks executed 0%
 function _ZN42DynamicArrayTest_PopBackDecreasesSize_TestC2Ev called 0 returned 0% blocks executed 0%
 function _ZN42DynamicArrayTest_PopBackDecreasesSize_TestD2Ev called 0 returned 0% blocks executed 0%
-        3:   43:    TEST_F(DynamicArrayTest, PopBackDecreasesSize) {
+        4:   43:    TEST_F(DynamicArrayTest, PopBackDecreasesSize) {
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
@@ -379,7 +379,7 @@ function _ZN54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestD0Ev called 
 function _ZN54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestC1Ev called 0 returned 0% blocks executed 0%
 function _ZN54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestC2Ev called 0 returned 0% blocks executed 0%
 function _ZN54DynamicArrayTest_AccessOutOfBoundsThrowsException_TestD2Ev called 0 returned 0% blocks executed 0%
-        3:   57:    TEST_F(DynamicArrayTest, AccessOutOfBoundsThrowsException) {
+        4:   57:    TEST_F(DynamicArrayTest, AccessOutOfBoundsThrowsException) {
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
@@ -458,7 +458,7 @@ function _ZN37DynamicArrayTest_ClearResetsSize_TestD0Ev called 0 returned 0% blo
 function _ZN37DynamicArrayTest_ClearResetsSize_TestC1Ev called 0 returned 0% blocks executed 0%
 function _ZN37DynamicArrayTest_ClearResetsSize_TestC2Ev called 0 returned 0% blocks executed 0%
 function _ZN37DynamicArrayTest_ClearResetsSize_TestD2Ev called 0 returned 0% blocks executed 0%
-        3:   64:    TEST_F(DynamicArrayTest, ClearResetsSize) {
+        4:   64:    TEST_F(DynamicArrayTest, ClearResetsSize) {
 branch  0 taken 100%
 branch  1 taken 0%
 branch  2 taken 100%
@@ -523,8 +523,8 @@ branch 15 never executed
     #####:   72:    }
         -:   73:
         -:   74:
-function main called 3 returned 100% blocks executed 100%
-        3:   75:int main(int argc, char **argv) {
-        3:   76:   ::testing::InitGoogleTest(&argc, argv);
-        3:   77:   return RUN_ALL_TESTS();
+function main called 4 returned 100% blocks executed 100%
+        4:   75:int main(int argc, char **argv) {
+        4:   76:   ::testing::InitGoogleTest(&argc, argv);
+        4:   77:   return RUN_ALL_TESTS();
         -:   78:}

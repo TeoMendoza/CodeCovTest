@@ -1,7 +1,7 @@
         -:    0:Source:/opt/homebrew/Cellar/googletest/1.15.2/include/gtest/gtest-assertion-result.h
         -:    0:Graph:./dynamic_array_test.gcno
         -:    0:Data:./dynamic_array_test.gcda
-        -:    0:Runs:3
+        -:    0:Runs:4
         -:    0:Programs:1
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
@@ -135,8 +135,8 @@
         -:  130://   Expected: Foo() is even
         -:  131://     Actual: it's 5
         -:  132:
-function _ZN7testing15AssertionResultD1Ev called 6 returned 100% blocks executed 100%
-function _ZN7testing15AssertionResultD2Ev called 6 returned 100% blocks executed 100%
+function _ZN7testing15AssertionResultD1Ev called 8 returned 100% blocks executed 100%
+function _ZN7testing15AssertionResultD2Ev called 8 returned 100% blocks executed 100%
         -:  133:class GTEST_API_ AssertionResult {
         -:  134: public:
         -:  135:  // Copy constructor.
@@ -178,8 +178,8 @@ function _ZN7testing15AssertionResultD2Ev called 6 returned 100% blocks executed
         -:  171:  }
         -:  172:
         -:  173:  // Returns true if and only if the assertion succeeded.
-function _ZNK7testing15AssertionResultcvbEv called 6 returned 100% blocks executed 100%
-        6:  174:  operator bool() const { return success_; }  // NOLINT
+function _ZNK7testing15AssertionResultcvbEv called 8 returned 100% blocks executed 100%
+        8:  174:  operator bool() const { return success_; }  // NOLINT
         -:  175:
         -:  176:  // Returns the assertion's negation. Used with EXPECT/ASSERT_FALSE.
         -:  177:  AssertionResult operator!() const;
