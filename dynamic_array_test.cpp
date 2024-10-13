@@ -7,10 +7,10 @@ protected:
     void TearDown() override {}
 };
 
-TEST_F(DynamicArrayTest, InitialSizeIsZero) {
-DynamicArray<int> arr;
-EXPECT_EQ(arr.GetSize(), 0);
-}
+    TEST_F(DynamicArrayTest, InitialSizeIsZero) {
+    DynamicArray<int> arr;
+    EXPECT_EQ(arr.GetSize(), 0);
+    }
 
     TEST_F(DynamicArrayTest, PushBackIncreasesSize) {
     DynamicArray<int> arr;
@@ -53,7 +53,6 @@ EXPECT_EQ(arr.GetSize(), 0);
     EXPECT_EQ(arr.GetSize(), 0);
     }
 
-
     TEST_F(DynamicArrayTest, AccessOutOfBoundsThrowsException) {
     DynamicArray<int> arr;
     arr.PushBack(10);
@@ -70,7 +69,6 @@ EXPECT_EQ(arr.GetSize(), 0);
     arr.Clear();
     EXPECT_EQ(arr.GetSize(), 0);
     }
-
 
 int main(int argc, char **argv) {
    ::testing::InitGoogleTest(&argc, argv);
