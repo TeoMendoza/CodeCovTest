@@ -35,6 +35,9 @@ test: $(EXEC)
 		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -Y codecov.yml -Z; \
 		sleep 5; \
 		make -B clean; \
+		git add .; \
+		git commit -m "Test: $$test"; \
+		git push; \
 	done
 	make clean
 
