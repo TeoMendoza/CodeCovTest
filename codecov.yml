@@ -1,6 +1,7 @@
 codecov:
   upload:
     overwrite: true
+    env: CODECOV_ENV
 
 
 
