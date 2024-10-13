@@ -13,7 +13,7 @@ TEST_FILE = dynamic_array_test.cpp
 TEST_CASES = \
 	DynamicArrayTest.InitialSizeIsZero \
 	DynamicArrayTest.PushBackIncreasesSize \
-	# DynamicArrayTest.CapacityDoublesWhenFull \
+	DynamicArrayTest.CapacityDoublesWhenFull \
 	# DynamicArrayTest.ElementsAreCorrectlyAdded \
 	# DynamicArrayTest.PopBackDecreasesSize \
 	# DynamicArrayTest.AccessOutOfBoundsThrowsException \
