@@ -30,7 +30,6 @@ $(EXEC): $(OBJS) dynamic_array.h
 # Rule to run individual tests
 test: $(EXEC)
 	for test in $(TEST_CASES); do \
-		make -B clean; \
 		git add .; \
 		git commit -m "Test: $$test"; \
 		git push; \
