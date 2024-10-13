@@ -12,7 +12,7 @@ TEST_FILE = dynamic_array_test.cpp
 # List of test cases for Google Test (formatted for filtering)
 TEST_CASES = \
 	DynamicArrayTest.InitialSizeIsZero \
-	# DynamicArrayTest.PushBackIncreasesSize \
+	DynamicArrayTest.PushBackIncreasesSize \
 	# DynamicArrayTest.CapacityDoublesWhenFull \
 	# DynamicArrayTest.ElementsAreCorrectlyAdded \
 	# DynamicArrayTest.PopBackDecreasesSize \
