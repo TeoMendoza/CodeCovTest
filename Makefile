@@ -33,15 +33,12 @@ test: $(EXEC)
 		git add .; \
 		git commit -m "Testing $$test"; \
 		git push; \
-		sleep 10; \
+		sleep 5; \
 		make $(EXEC); \
 		./$(EXEC) --gtest_filter=$$test; \
-		echo "Before uploading coverage for $$test:"; \
-		ls *.gcno *.gcda 2>/dev/null || echo "No coverage files found"; \
 		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -Y codecov.yml -Z; \
+		sleep 5; \
 		make -B clean; \
-		echo "After cleaning:"; \
-		ls *.gcno *.gcda 2>/dev/null || echo "No coverage files found"; \
 	done
 
 
