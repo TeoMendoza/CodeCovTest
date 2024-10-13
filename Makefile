@@ -30,16 +30,15 @@ $(EXEC): $(OBJS) dynamic_array.h
 # Rule to run individual tests
 test: $(EXEC)
 	for test in $(TEST_CASES); do \
-		make $(EXEC); \
-		./$(EXEC) --gtest_filter=$$test; \
-		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -Y codecov.yml -Z; \
-		sleep 5; \
-		make -B clean; \
 		git add .; \
 		git commit -m "Test: $$test"; \
 		git push; \
+		sleep 5; \
+		make $(EXEC); \
+		./$(EXEC) --gtest_filter=$$test; \
+		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -Y codecov.yml -Z; \
+		make -B clean; \
 	done
-	make clean
 
 
 # Clean up build artifacts and coverage data
