@@ -30,10 +30,10 @@ $(EXEC): $(OBJS) dynamic_array.h
 # Rule to run individual tests
 test: $(EXEC)
 	for test in $(TEST_CASES); do \
-		# git add .; \
-		# git commit -m "Test: $$test"; \
-		# git push; \
-		# sleep 5; \
+		git add .; \
+		git commit -m "Test: $$test"; \
+		git push; \
+		sleep 5; \
 		make $(EXEC); \
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
