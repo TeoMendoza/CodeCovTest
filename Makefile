@@ -11,9 +11,9 @@ TEST_FILE = dynamic_array_test.cpp
 
 # List of test cases for Google Test (formatted for filtering)
 TEST_CASES = \
-	DynamicArrayTest.InitialSizeIsZero \
 	DynamicArrayTest.PushBackIncreasesSize \
 	DynamicArrayTest.CapacityDoublesWhenFull \
+	DynamicArrayTest.InitialSizeIsZero \
 	# DynamicArrayTest.ElementsAreCorrectlyAdded \
 	# DynamicArrayTest.PopBackDecreasesSize \
 	# DynamicArrayTest.AccessOutOfBoundsThrowsException \
