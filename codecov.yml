@@ -10,4 +10,4 @@ codecov:
     files:
       dynamic_array.h:
         target: 90
-        message: Ensure adequate coverage for functions declared in dynamic_array.h
+        message: "Ensure adequate coverage for functions declared in dynamic_array.h"
