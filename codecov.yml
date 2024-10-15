@@ -1,13 +1,32 @@
----
 codecov:
-  upload:
-    overwrite: true
-    env: CODECOV_ENV
-  comment: true
-  coverage:
-    precision: 2
-    round: up
-    files:
-      dynamic_array.h:
-        target: 90
-        message: "Ensure adequate coverage for functions declared in dynamic_array.h"
+  branch: stable
+
+coverage:
+  status:
+    project:
+      default: off
+      dynamic_array:
+        target: 90%  # Set the target coverage for dynamic_array.h
+        flags:
+          - under_50
+          - under_75
+          - under_90
+
+#flags:
+  #under_50:
+  #   paths:
+  #     - dynamic_array.h  # Specify the path to your header file
+  #   message: "Coverage is below the expected 50% for dynamic_array.h."
+
+  # under_75:
+  #   paths:
+  #     - dynamic_array.h  # Specify the path to your header file
+  #   message: "Coverage is below the expected 75% for dynamic_array.h."
+
+  # under_90:
+  #   paths:
+  #     - dynamic_array.h  # Specify the path to your header file
+  #   message: "Coverage is below the expected 90% for dynamic_array.h."
+
+
+    
