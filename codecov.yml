@@ -1,14 +1,13 @@
+---
 codecov:
   upload:
     overwrite: true
     env: CODECOV_ENV
-  comment: true  # Add comments to pull requests with coverage info
+  comment: true
   coverage:
     precision: 2
     round: up
-    # This block is for file-specific coverage thresholds
     files:
       dynamic_array.h:
-        target: 90  # Set a target for coverage on the header file
-        message: "Ensure adequate coverage for functions declared in dynamic_array.h"
-
+        target: 90
+        message: Ensure adequate coverage for functions declared in dynamic_array.h
