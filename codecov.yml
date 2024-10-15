@@ -5,7 +5,7 @@ coverage:
   status:
     project:
       default: off
-      dynamic_array:
+      dynamic_array.h:
         target: 90%  # Set the target coverage for dynamic_array.h
         flags:
           - under_50
