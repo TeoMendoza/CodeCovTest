@@ -38,7 +38,7 @@ test: $(EXEC)
 			git commit -m "Coverage for test: $$test"; \
 			git push; \
 		fi; \
-		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -Y codecov.yml -Z; \
+		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -Y codecov.yml -F under_50,under_75,under_90; \
 		sleep 5; \
 	done
 	make clean; \
