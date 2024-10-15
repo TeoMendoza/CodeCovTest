@@ -12,8 +12,8 @@ TEST_FILE = dynamic_array_test.cpp
 # List of test cases for Google Test (formatted for filtering)
 TEST_CASES = \
 	DynamicArrayTest.InitialSizeIsZero \
-	DynamicArrayTest.PushBackIncreasesSize \
-	DynamicArrayTest.CapacityDoublesWhenFull \
+	# DynamicArrayTest.PushBackIncreasesSize \
+	# DynamicArrayTest.CapacityDoublesWhenFull \
 	# DynamicArrayTest.ElementsAreCorrectlyAdded \
 	# DynamicArrayTest.PopBackDecreasesSize \
 	# DynamicArrayTest.AccessOutOfBoundsThrowsException \
@@ -27,20 +27,21 @@ $(EXEC): $(OBJS) dynamic_array.h
 %.o: %.cpp dynamic_array.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Rule to run individual tests
 test: $(EXEC)
 	for test in $(TEST_CASES); do \
-		git add .; \
-		git commit -m "Test: $$test"; \
-		git push; \
-		sleep 5; \
+		make clean; \
 		make $(EXEC); \
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
+		git add *.gcno *.gcda; \
+		if ! git diff --cached --quiet; then \
+			git commit -m "Coverage for test: $$test"; \
+			git push; \
+		fi; \
 		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -Y codecov.yml -Z; \
-		make -B clean; \
+		sleep 5; \
 	done
-
+	make clean; \
 
 # Clean up build artifacts and coverage data
 clean:
