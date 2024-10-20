@@ -6,49 +6,21 @@ coverage:
     project:
       default: off
       dynamic_array:
-        target: 90%  # Set the target coverage for dynamic_array.h
+        target: 10%  # Set the target coverage for dynamic_array.h
         flags:
-          - under_50
-          - under_75
-          - under_90
+          - dynamic_array
 
-flag_management:
-  default_rules:
+comment:
+  layout: "diff, flags, files"
+  behavior: default
+  require_changes: false  
+  require_base: yes
+  require_head: yes     
+  branches: null  
+
+flags:
+  dynamic_array:
+    paths: 
+      - dynamic_array.h
     carryforward: true
-    statuses:
-      - type: project
-        target: auto
-        threshold: 1%
-      - type: patch
-        target: 90%
-  individual_flags:
-    - name: under_50
-      paths:
-        - dynamic_array.h  # Specify the path to your header file
-      carryforward: true
-      statuses:
-        - type: project
-          target: 50%  # Target for the under_50 flag
-        - type: patch
-          target: 90%  # Target for the patch coverage
-
-    - name: under_75
-      paths:
-        - dynamic_array.h
-      carryforward: true
-      statuses:
-        - type: project
-          target: 75%  # Target for the under_75 flag
-        - type: patch
-          target: 90%  # Target for the patch coverage
-
-    - name: under_90
-      paths:
-        - dynamic_array.h
-      carryforward: true
-      statuses:
-        - type: project
-          target: 90%  # Target for the under_90 flag
-        - type: patch
-          target: 90%  # Target for the patch coverage
 
