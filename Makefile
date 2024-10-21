@@ -12,7 +12,7 @@ TEST_FILE = dynamic_array_test.cpp
 # List of test cases for Google Test (formatted for filtering)
 TEST_CASES = \
 	DynamicArrayTest.PushBackIncreasesSize \
-	DynamicArrayTest.InitialSizeIsZero \
+	#DynamicArrayTest.InitialSizeIsZero \
 	# DynamicArrayTest.CapacityDoublesWhenFull \
 	# DynamicArrayTest.ElementsAreCorrectlyAdded \
 	# DynamicArrayTest.PopBackDecreasesSize \
@@ -33,7 +33,7 @@ test: $(EXEC)
 		make $(EXEC); \
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
-		git add *.gcno *.gcda; \
+		git add *.gcno *.gcda; \ 
 		if ! git diff --cached --quiet; then \
 			git commit -m "Coverage for test: $$test"; \
 			git push; \
@@ -49,4 +49,4 @@ clean:
 	rm -rf $(COV_DIR)
 
 
-
+# PUSH YAML EACH TIME YOU CHANGE IT, consider adding it into the manual push, because im not sure if enviornment variables will update on the push when sent to code cov

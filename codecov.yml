@@ -6,7 +6,7 @@ coverage:
     project:
       default: off
       dynamic_array:
-        target: 10%  # Set the target coverage for dynamic_array.h
+        target: 35%
         flags:
           - dynamic_array
 
@@ -16,7 +16,15 @@ comment:
   require_changes: false  
   require_base: yes
   require_head: yes     
-  branches: null  
+  branches: null
+  message:
+    flags:
+      dynamic_array:
+        failed:
+          title: "Dynamic Array Coverage Check Failed"
+          body: |
+            The coverage for the **dynamic_array** flag is below the required threshold.
+            Please ensure that your tests are adequately covering all code paths.  
 
 flags:
   dynamic_array:
