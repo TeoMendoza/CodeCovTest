@@ -39,7 +39,7 @@ test: $(EXEC)
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
 		export COVERAGE_THRESHOLD=$${thresholds[$$count]}; \
-		git add *.gcno *.gcda; \
+		git add *.yml *.gcno *.gcda; \
 		if ! git diff --cached --quiet; then \
 			git commit -m "Coverage for test: $$test"; \
 			git push; \

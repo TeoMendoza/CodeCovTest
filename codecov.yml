@@ -6,7 +6,7 @@ coverage:
     project:
       default: off
       dynamic_array:
-        target: $COVERAGE_THRESHOLD
+        target: ${COVERAGE_THRESHOLD}
         flags:
           - dynamic_array
 
