@@ -33,22 +33,25 @@ $(EXEC): $(OBJS) dynamic_array.h
 test: $(EXEC)
 	thresholds=( $(COVERAGE_THRESHOLDS) )
 	count=0
+	cp codecov.yml codecov_backup.yml
 	for test in $(TEST_CASES); do \
 		make clean; \
 		make $(EXEC); \
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
 		export COVERAGE_THRESHOLD=${thresholds[$$count]}; \
-		sed "s/\${COVERAGE_THRESHOLD_PLACEHOLDER}/$$COVERAGE_THRESHOLD/g" codecov_template.yml > temp_codecov.yml; \
+		sed -i "s/\${COVERAGE_THRESHOLD_PLACEHOLDER}/$$COVERAGE_THRESHOLD/g" codecov.yml; \
 		git add *.yml *.gcno *.gcda; \
 		if ! git diff --cached --quiet; then \
 			git commit -m "Coverage for test: $$test"; \
 			git push; \
 		fi; \
-		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -F dynamic_array -y temp_codecov.yml; \
+		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -F dynamic_array; \
 		count=$$((count + 1)); \
 		sleep 5; \
+		cp codecov_backup.yml codecov.yml; \
 	done
+	rm codecov_backup.yml
 	make clean; \
 
 # thresholds=( $(COVERAGE_THRESHOLDS) )
