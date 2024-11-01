@@ -45,7 +45,7 @@ test: $(EXEC)
 			git commit -m "Coverage for test: $$test"; \
 			git push; \
 		fi; \
-		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -F dynamic_array; \
+		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -F dynamic_array -y codecov.yml; \
 		count=$$((count + 1)); \
 		sleep 5; \
 	done
