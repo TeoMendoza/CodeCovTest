@@ -39,7 +39,7 @@ test: $(EXEC)
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
 		export COVERAGE_THRESHOLD=${thresholds[$$count]}; \
-		sed -i'' "s/target: [0-9]\+%/target: $$COVERAGE_THRESHOLD%/g" codecov.yml; \
+		sed -i.bak "s/target: [0-9]\+%/target: $$COVERAGE_THRESHOLD%/g" codecov.yml && rm codecov.yml.bak; \
 		git add *.yml *.gcno *.gcda; \
 		if ! git diff --cached --quiet; then \
 			git commit -m "Coverage for test: $$test"; \
