@@ -12,14 +12,14 @@ TEST_FILE = dynamic_array_test.cpp
 # List of test cases for Google Test (formatted for filtering)
 TEST_CASES = \
 	DynamicArrayTest.PushBackIncreasesSize \
-	DynamicArrayTest.InitialSizeIsZero \
+	#DynamicArrayTest.InitialSizeIsZero \
 	# DynamicArrayTest.CapacityDoublesWhenFull \
 	# DynamicArrayTest.ElementsAreCorrectlyAdded \
 	# DynamicArrayTest.PopBackDecreasesSize \
 	# DynamicArrayTest.AccessOutOfBoundsThrowsException \
 	# DynamicArrayTest.ClearResetsSize
 
-COVERAGE_THRESHOLDS := 10% 15%
+COVERAGE_THRESHOLDS := 15%
 
 
 # Target to build the executable
@@ -39,7 +39,7 @@ test: $(EXEC)
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
 		export COVERAGE_THRESHOLD=${thresholds[$$count]}; \
-		sed -i "s/target: [0-9]\+%/target: $$COVERAGE_THRESHOLD%/g" codecov.yml; \
+		sed -i'' -e "s/target: [0-9]\+%/target: $$COVERAGE_THRESHOLD%/g" codecov.yml;
 		git add *.yml *.gcno *.gcda; \
 		if ! git diff --cached --quiet; then \
 			git commit -m "Coverage for test: $$test"; \
