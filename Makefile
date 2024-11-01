@@ -38,17 +38,37 @@ test: $(EXEC)
 		make $(EXEC); \
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
-		export COVERAGE_THRESHOLD=$${thresholds[$$count]}; \
+		export COVERAGE_THRESHOLD=${thresholds[$$count]}; \
+		sed "s/\${COVERAGE_THRESHOLD_PLACEHOLDER}/$$COVERAGE_THRESHOLD/g" codecov_template.yml > temp_codecov.yml; \
 		git add *.yml *.gcno *.gcda; \
 		if ! git diff --cached --quiet; then \
 			git commit -m "Coverage for test: $$test"; \
 			git push; \
 		fi; \
-		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -F dynamic_array \
+		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -F dynamic_array -y temp_codecov.yml; \
 		count=$$((count + 1)); \
 		sleep 5; \
 	done
 	make clean; \
+
+# thresholds=( $(COVERAGE_THRESHOLDS) )
+# count=0
+# for test in $(TEST_CASES); do \
+# 	make clean; \
+# 	make $(EXEC); \
+# 	./$(EXEC) --gtest_filter=$$test; \
+# 	export CODECOV_ENV=$$test; \
+# 	export COVERAGE_THRESHOLD=$${thresholds[$$count]}; \
+# 	git add *.yml *.gcno *.gcda; \
+# 	if ! git diff --cached --quiet; then \
+# 		git commit -m "Coverage for test: $$test"; \
+# 		git push; \
+# 	fi; \
+# 	bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -F dynamic_array \
+# 	count=$$((count + 1)); \
+# 	sleep 5; \
+# done
+# make clean; \
 
 # Clean up build artifacts and coverage data
 # PUSH YAML EACH TIME YOU CHANGE IT, consider adding it into the manual push, because im not sure if enviornment variables will update on the push when sent to code cov
