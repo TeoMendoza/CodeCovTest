@@ -7,7 +7,7 @@ OBJS = $(SRCS:.cpp=.o)
 EXEC = test_run
 COV_DIR = coverage_report
 TEST_FILE = dynamic_array_test.cpp
-coverage_thresh = := 10
+
 
 
 # List of test cases for Google Test (formatted for filtering)
@@ -21,6 +21,7 @@ TEST_CASES = \
 	# DynamicArrayTest.ClearResetsSize
 
 COVERAGE_THRESHOLDS := 15
+COVERAGE_THRESHOLD := 10
 
 
 # Target to build the executable
@@ -31,16 +32,23 @@ $(EXEC): $(OBJS) dynamic_array.h
 %.o: %.cpp dynamic_array.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+edit-yml:
+	@count=$(COUNT); \
+	thresholds=($(COVERAGE_THRESHOLDS)); \
+	COVERAGE_THRESHOLD=$${thresholds[$$count]}; \
+	echo "Setting coverage threshold to $$COVERAGE_THRESHOLD%"; \
+	sed -i '' "s/target: [0-9]*%/target: $$COVERAGE_THRESHOLD%/" codecov.yml; \
+	echo "Updated codecov.yml content:"; \
+	cat codecov.yml
+
 test: $(EXEC)
-	thresholds=( $(COVERAGE_THRESHOLDS) )
 	count=0
 	for test in $(TEST_CASES); do \
 		make clean; \
 		make $(EXEC); \
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
-		coverage_thresh=$${thresholds[$$count]}; \
-		sed -i'' "s/target: [0-9]\+%/target: $$coverage_thresh%/g" codecov.yml; \
+		$(MAKE) edit-yml COUNT=$$count; \
 		git add *.yml *.gcno *.gcda; \
 		if ! git diff --cached --quiet; then \
 			git commit -m "Coverage for test: $$test"; \
@@ -52,36 +60,10 @@ test: $(EXEC)
 	done
 	make clean; \
 
-# thresholds=( $(COVERAGE_THRESHOLDS) )
-# count=0
-# for test in $(TEST_CASES); do \
-# 	make clean; \
-# 	make $(EXEC); \
-# 	./$(EXEC) --gtest_filter=$$test; \
-# 	export CODECOV_ENV=$$test; \
-# 	export COVERAGE_THRESHOLD=$${thresholds[$$count]}; \
-# 	git add *.yml *.gcno *.gcda; \
-# 	if ! git diff --cached --quiet; then \
-# 		git commit -m "Coverage for test: $$test"; \
-# 		git push; \
-# 	fi; \
-# 	bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -F dynamic_array \
-# 	count=$$((count + 1)); \
-# 	sleep 5; \
-# done
-# make clean; \
-
-# Clean up build artifacts and coverage data
-# PUSH YAML EACH TIME YOU CHANGE IT, consider adding it into the manual push, because im not sure if enviornment variables will update on the push when sent to code cov
 clean:
 	rm -f $(OBJS) $(EXEC) *.gcno *.gcda *.gcov
 	rm -rf $(COV_DIR)
 
-# edit-yml:
-# 	echo "Attempting in-place edit on codecov.yml..."; \
-# 	echo "Current coverage threshold is: $(coverage_thresh)"; \
-# 	COVERAGE_THRESHOLD=20 sed -i '' "s/target: [0-9]*%/target: $(coverage_thresh)%/" codecov.yml; \
-# 	echo "Updated codecov.yml content after edit:"; \
-# 	cat codecov.yml; \
+
 
 
