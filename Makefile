@@ -7,6 +7,7 @@ OBJS = $(SRCS:.cpp=.o)
 EXEC = test_run
 COV_DIR = coverage_report
 TEST_FILE = dynamic_array_test.cpp
+coverage_thresh = := 10
 
 
 # List of test cases for Google Test (formatted for filtering)
@@ -19,7 +20,7 @@ TEST_CASES = \
 	# DynamicArrayTest.AccessOutOfBoundsThrowsException \
 	# DynamicArrayTest.ClearResetsSize
 
-COVERAGE_THRESHOLDS := 15%
+COVERAGE_THRESHOLDS := 15
 
 
 # Target to build the executable
@@ -38,8 +39,8 @@ test: $(EXEC)
 		make $(EXEC); \
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
-		export COVERAGE_THRESHOLD=${thresholds[$$count]}; \
-		sed -i.bak "s/target: [0-9]\+%/target: $$COVERAGE_THRESHOLD%/g" codecov.yml && rm codecov.yml.bak; \
+		coverage_thresh=$${thresholds[$$count]}; \
+		sed -i'' "s/target: [0-9]\+%/target: $$coverage_thresh%/g" codecov.yml; \
 		git add *.yml *.gcno *.gcda; \
 		if ! git diff --cached --quiet; then \
 			git commit -m "Coverage for test: $$test"; \
@@ -76,5 +77,11 @@ clean:
 	rm -f $(OBJS) $(EXEC) *.gcno *.gcda *.gcov
 	rm -rf $(COV_DIR)
 
+# edit-yml:
+# 	echo "Attempting in-place edit on codecov.yml..."; \
+# 	echo "Current coverage threshold is: $(coverage_thresh)"; \
+# 	COVERAGE_THRESHOLD=20 sed -i '' "s/target: [0-9]*%/target: $(coverage_thresh)%/" codecov.yml; \
+# 	echo "Updated codecov.yml content after edit:"; \
+# 	cat codecov.yml; \
 
 
