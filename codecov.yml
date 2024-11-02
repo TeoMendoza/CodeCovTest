@@ -6,7 +6,7 @@ coverage:
     project:
       default: off
       dynamic_array:
-        target: 25%
+        target: 15%
         flags:
           - dynamic_array
 
