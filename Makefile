@@ -13,15 +13,15 @@ TEST_FILE = dynamic_array_test.cpp
 # List of test cases for Google Test (formatted for filtering)
 TEST_CASES = \
 	DynamicArrayTest.PushBackIncreasesSize \
-	#DynamicArrayTest.InitialSizeIsZero \
+	# DynamicArrayTest.InitialSizeIsZero \
 	# DynamicArrayTest.CapacityDoublesWhenFull \
 	# DynamicArrayTest.ElementsAreCorrectlyAdded \
 	# DynamicArrayTest.PopBackDecreasesSize \
 	# DynamicArrayTest.AccessOutOfBoundsThrowsException \
 	# DynamicArrayTest.ClearResetsSize
 
-COVERAGE_THRESHOLDS := 15
-COVERAGE_THRESHOLD := 10
+COVERAGE_THRESHOLDS := 15 
+COVERAGE_THRESHOLD := 0
 
 
 # Target to build the executable
@@ -31,15 +31,6 @@ $(EXEC): $(OBJS) dynamic_array.h
 # Rule to compile .cpp files into .o files
 %.o: %.cpp dynamic_array.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-edit-yml:
-	@count=$(COUNT); \
-	thresholds=($(COVERAGE_THRESHOLDS)); \
-	COVERAGE_THRESHOLD=$${thresholds[$$count]}; \
-	echo "Setting coverage threshold to $$COVERAGE_THRESHOLD%"; \
-	sed -i '' "s/target: [0-9]*%/target: $$COVERAGE_THRESHOLD%/" codecov.yml; \
-	echo "Updated codecov.yml content:"; \
-	cat codecov.yml
 
 test: $(EXEC)
 	count=0
@@ -59,6 +50,27 @@ test: $(EXEC)
 		sleep 5; \
 	done
 	make clean; \
+	
+edit-yml:
+	@count=$(COUNT); \
+	thresholds=($(COVERAGE_THRESHOLDS)); \
+	COVERAGE_THRESHOLD=$${thresholds[$$count]}; \
+	echo "Setting coverage threshold to $$COVERAGE_THRESHOLD%"; \
+	sed -i '' "s/target: [0-9]*%/target: $$COVERAGE_THRESHOLD%/" codecov.yml; \
+	echo "Updated codecov.yml content:"; \
+	cat codecov.yml
+
+fetch-report:
+	@echo "Fetching JSON coverage report for the latest commit with dynamic_array flag..."
+	@REPO_SLUG="TeoMendoza/CodeCovTest"  # Replace with your actual repo slug in 'username/repo' format
+	@COMMIT_SHA=$$(git rev-parse HEAD)  # Automatically fetch the latest commit SHA
+	@API_TOKEN=  # Replace with your actual API token
+	@curl -s --request GET \
+		--url "https://api.codecov.io/api/v2/github/$${REPO_SLUG}/commits/$${COMMIT_SHA}/report/?flag=dynamic_array" \
+		--header "accept: application/json" \
+		--header "authorization: Bearer $${API_TOKEN}" \
+		-o "coverage_report_$${COMMIT_SHA}.json"
+	@echo "Coverage report saved as coverage_report_$${COMMIT_SHA}.json"
 
 clean:
 	rm -f $(OBJS) $(EXEC) *.gcno *.gcda *.gcov
