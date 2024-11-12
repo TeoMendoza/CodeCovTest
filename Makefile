@@ -21,7 +21,6 @@ TEST_CASES = \
 	# DynamicArrayTest.ClearResetsSize
 
 COVERAGE_THRESHOLDS := 15 
-COVERAGE_THRESHOLD := 0
 
 
 # Target to build the executable
@@ -33,32 +32,20 @@ $(EXEC): $(OBJS) dynamic_array.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 test: $(EXEC)
-	count=0
 	for test in $(TEST_CASES); do \
 		make clean; \
 		make $(EXEC); \
 		./$(EXEC) --gtest_filter=$$test; \
 		export CODECOV_ENV=$$test; \
-		$(MAKE) edit-yml COUNT=$$count; \
 		git add *.yml *.gcno *.gcda; \
 		if ! git diff --cached --quiet; then \
 			git commit -m "Coverage for test: $$test"; \
 			git push; \
 		fi; \
-		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -F dynamic_array -y codecov.yml; \
-		count=$$((count + 1)); \
+		bash <(curl -s https://codecov.io/bash) -t 5711eb10-0699-4268-89c9-3d132dbc5dfe -y codecov.yml; \
 		sleep 5; \
 	done
 	make clean; \
-	
-edit-yml:
-	@count=$(COUNT); \
-	thresholds=($(COVERAGE_THRESHOLDS)); \
-	COVERAGE_THRESHOLD=$${thresholds[$$count]}; \
-	echo "Setting coverage threshold to $$COVERAGE_THRESHOLD%"; \
-	sed -i '' "s/target: [0-9]*%/target: $$COVERAGE_THRESHOLD%/" codecov.yml; \
-	echo "Updated codecov.yml content:"; \
-	cat codecov.yml
 
 fetch-report:
 	@echo "Fetching JSON coverage report for the latest commit with dynamic_array flag..."
@@ -79,3 +66,11 @@ clean:
 
 
 
+edit-yml:
+	@count=$(COUNT); \
+	thresholds=($(COVERAGE_THRESHOLDS)); \
+	COVERAGE_THRESHOLD=$${thresholds[$$count]}; \
+	echo "Setting coverage threshold to $$COVERAGE_THRESHOLD%"; \
+	sed -i '' "s/target: [0-9]*%/target: $$COVERAGE_THRESHOLD%/" codecov.yml; \
+	echo "Updated codecov.yml content:"; \
+	cat codecov.yml
